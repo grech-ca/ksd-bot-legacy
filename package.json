@@ -6,6 +6,7 @@
   "devDependencies": {
     "@types/node": "^16.11.6",
     "nodemon": "^2.0.14",
+    "simple-git": "^2.47.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   },
@@ -16,6 +17,7 @@
     "vk-io": "^4.4.0"
   },
   "scripts": {
-    "dev": "nodemon index.ts"
+    "dev": "NODE_ENV=development nodemon src/index.ts",
+    "start": "NODE_ENV=production ts-node src/index.ts"
   }
 }
