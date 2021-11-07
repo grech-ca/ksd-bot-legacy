@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "lib": ["esnext"],
+    "target": "esnext",
     "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./build",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
+    "sourceMap": true
   }
 }
+
