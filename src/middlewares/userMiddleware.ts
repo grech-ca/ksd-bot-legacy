@@ -1,9 +1,10 @@
 import { Middleware } from 'middleware-io';
+import { MessageContext } from 'vk-io';
 
 import User from '../entity/User';
-import { AppContext } from '../index';
+import { AppContext, WithAppContext } from '../index';
 
-const userMiddleware: Middleware<AppContext> = async ({ connection, senderId, senderType }, next) => {
+const userMiddleware: Middleware<WithAppContext<MessageContext>> = async ({ connection, senderId, senderType }, next) => {
   const userRepository = connection.getRepository(User);
 
   if (senderType === 'user' && senderId) {

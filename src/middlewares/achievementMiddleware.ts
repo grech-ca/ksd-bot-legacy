@@ -1,6 +1,8 @@
-import { Context } from 'vk-io';
+import { NextMiddleware } from 'middleware-io';
 
-const achievementMiddleware = (ctx: Context, next) => {
+import { AppContext } from '../index';
+
+const achievementMiddleware = (ctx: AppContext, next: NextMiddleware) => {
   return next();
 };
 
