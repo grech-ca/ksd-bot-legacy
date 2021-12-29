@@ -7,8 +7,8 @@
       "@types/node": "^8.0.29",
       "nodemon": "^2.0.14",
       "simple-git": "^2.47.0",
-      "ts-node": "3.3.0",
-      "typescript": "3.3.3333"
+      "ts-node": "^10.4.0",
+      "typescript": "^4.5.4"
    },
    "dependencies": {
       "@vk-io/hear": "^1.1.0",
@@ -17,12 +17,16 @@
       "middleware-io": "^2.8.0",
       "mysql": "^2.14.1",
       "pg": "^8.7.1",
+      "pm2": "^5.1.2",
       "reflect-metadata": "^0.1.10",
+      "rimraf": "^3.0.2",
       "typeorm": "0.2.38",
       "vk-io": "^4.4.0"
    },
    "scripts": {
       "dev": "NODE_ENV=development nodemon src/index.ts",
-      "start": "ts-node src/index.ts"
+      "start": "pm2 start build/index.js",
+      "build": "rimraf build && tsc -p ./tsconfig.json",
+      "test": "tsc --version"
    }
 }

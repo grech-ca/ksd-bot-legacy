@@ -2,10 +2,11 @@ version: '3.7'
 services:
   db:
     image: postgres
+    env_file: ./.env
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: ksd-bot
+      POSTGRES_USER: $DB_USER
+      POSTGRES_PASSWORD: $DB_PASSWORD
+      POSTGRES_DB: $DB_NAME 
     volumes: 
       - /opt/homebrew/bin/postgres
     ports:
